@@ -1,0 +1,25 @@
+{
+    "name": "aiep-view",
+    "displayName": "aiep-view",
+    "description": "Using this code snipper we can easily generate a lot configurations",
+    "publisher": "canucankit",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "icon": "icon-code.png",
+    "repository": {
+        "url": "https://github.com/canucankit/aiep-snippets.git"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "yaml",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

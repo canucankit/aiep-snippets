@@ -1,0 +1,47 @@
+{
+	"AieP View With Object Mock Generator Snippet": {
+		"prefix": "aiepviewobject",
+		"body": [
+		  "\\${GRAPHQL_MOCK_GENERATOR_MOCK_MAPPINGS_DIRECTORY\\}/${1|getBicycleInsuranceOverview,getCaravanInsuranceOverview,getHomeInsuranceOverview,getInventoryInsuranceOverview,getLegalAssistanceOverview,getLiabilityOverview,getLongTermTravelOverview,getLuggageInsuranceOverview,getMopedInsuranceOverview,getMotorInsuranceOverview,getOldtimerMotorInsuranceOverview,getOldtimerMopedInsuranceOverview,getOldtimerPassengerCarInsuranceOverview,getPassengerCarInsuranceOverview,getPersonalAccidentOverview,getTrailerInsuranceOverview,getVesselInsuranceOverview|}-policyNumber-${2:policynumber}-${3|licensePlate,frameNumber,vesselObject,trailerObject,inventoryObject,homeObject,insuranceObject|}-${4:object}.json:",
+		  "    plugins:",
+		  "      - graphql-codegen-wiremock-plugin:                         ",
+		  "          wiremock:            ",
+		  "            request:",
+		  "              method: \"POST\"",
+		  "              urlPattern: \"/api/msp/insurances/interpolis-allesineenpolis\"                                    ",
+		  "          request:            ",
+		  "            outputPath: \"\\${GRAPHQL_MOCK_GENERATOR_MOCK_FILES_DIRECTORY\\}/pages/verzekeren/pages/alles-in-een-polis-inzien/${5|aanhangwagen-verzekering,aansprakelijkheid-verzekering,auto-verzekering,bromfiets-verzekering,buitendedeur-verzekering,camper-verzekering,caravan-verzekering,doorlopende-reisverzekering,fiets-verzekering,inboedel-verzekering,motor-verzekering,oldtimer-autoverzekering,oldtimer-brommerverzekering,oldtimer-motorverzekering,ongevallen-verzekering,pleziervaartuig-verzekering,rechtsbijstand-verzekering,woonhuis-verzekering|}\"",
+		  "            url: \"\\${GRAPHQL_MOCK_GENERATOR_REMOTE_URL\\}\" ",
+		  "            headers:",
+		  "              'x-auth-user': '${6:x-auth-user}'",
+		  "          operation:",
+		  "            name: '${1:operation}'            ",
+		  "            variables:",
+		  "              policyNumber: '${2:policynumber}'",
+		  "              ${3|licensePlate,frameNumber,vesselObject,trailerObject,inventoryObject,homeObject,insuranceObject|}: '${4:object}'      "
+		],
+		"description": "AieP View Mock Generator Snippet"
+	  },
+	  "AieP View Mock Generator Snippet": {
+		"prefix": "aiepview",
+		"body": [
+		  "\\${GRAPHQL_MOCK_GENERATOR_MOCK_MAPPINGS_DIRECTORY\\}/${1|getBicycleInsuranceOverview,getCaravanInsuranceOverview,getHomeInsuranceOverview,getInventoryInsuranceOverview,getLegalAssistanceOverview,getLiabilityOverview,getLongTermTravelOverview,getLuggageInsuranceOverview,getMopedInsuranceOverview,getMotorInsuranceOverview,getOldtimerMotorInsuranceOverview,getOldtimerMopedInsuranceOverview,getOldtimerPassengerCarInsuranceOverview,getPassengerCarInsuranceOverview,getPersonalAccidentOverview,getTrailerInsuranceOverview,getVesselInsuranceOverview|}-policyNumber-${2:policynumber}.json:",
+		  "    plugins:",
+		  "      - graphql-codegen-wiremock-plugin:                         ",
+		  "          wiremock:            ",
+		  "            request:",
+		  "              method: \"POST\"",
+		  "              urlPattern: \"/api/msp/insurances/interpolis-allesineenpolis\"                                    ",
+		  "          request:            ",
+		  "            outputPath: \"\\${GRAPHQL_MOCK_GENERATOR_MOCK_FILES_DIRECTORY\\}/pages/verzekeren/pages/alles-in-een-polis-inzien/${5|aanhangwagen-verzekering,aansprakelijkheid-verzekering,auto-verzekering,bromfiets-verzekering,buitendedeur-verzekering,camper-verzekering,caravan-verzekering,doorlopende-reisverzekering,fiets-verzekering,inboedel-verzekering,motor-verzekering,oldtimer-autoverzekering,oldtimer-brommerverzekering,oldtimer-motorverzekering,ongevallen-verzekering,pleziervaartuig-verzekering,rechtsbijstand-verzekering,woonhuis-verzekering|}\"",
+		  "            url: \"\\${GRAPHQL_MOCK_GENERATOR_REMOTE_URL\\}\" ",
+		  "            headers:",
+		  "              'x-auth-user': '${6:x-auth-user}'",
+		  "          operation:",
+		  "            name: '${1:operation}'            ",
+		  "            variables:",
+		  "              policyNumber: '${2:policynumber}'"
+		],
+		"description": "AieP View Mock Generator Snippet"
+	  }
+}
